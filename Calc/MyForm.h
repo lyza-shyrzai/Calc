@@ -140,6 +140,7 @@ namespace Calc {
 			this->btn7->TabIndex = 1;
 			this->btn7->Text = L"7";
 			this->btn7->UseVisualStyleBackColor = true;
+			this->btn7->Click += gcnew System::EventHandler(this, &MyForm::button_Click);
 			// 
 			// btn8
 			// 
@@ -151,6 +152,7 @@ namespace Calc {
 			this->btn8->TabIndex = 2;
 			this->btn8->Text = L"8";
 			this->btn8->UseVisualStyleBackColor = true;
+			this->btn8->Click += gcnew System::EventHandler(this, &MyForm::button_Click);
 			// 
 			// btn4
 			// 
@@ -162,6 +164,7 @@ namespace Calc {
 			this->btn4->TabIndex = 3;
 			this->btn4->Text = L"4";
 			this->btn4->UseVisualStyleBackColor = true;
+			this->btn4->Click += gcnew System::EventHandler(this, &MyForm::button_Click);
 			// 
 			// btn5
 			// 
@@ -173,6 +176,7 @@ namespace Calc {
 			this->btn5->TabIndex = 4;
 			this->btn5->Text = L"5";
 			this->btn5->UseVisualStyleBackColor = true;
+			this->btn5->Click += gcnew System::EventHandler(this, &MyForm::button_Click);
 			// 
 			// btn1
 			// 
@@ -184,6 +188,7 @@ namespace Calc {
 			this->btn1->TabIndex = 5;
 			this->btn1->Text = L"1";
 			this->btn1->UseVisualStyleBackColor = true;
+			this->btn1->Click += gcnew System::EventHandler(this, &MyForm::button_Click);
 			// 
 			// btn2
 			// 
@@ -195,6 +200,7 @@ namespace Calc {
 			this->btn2->TabIndex = 6;
 			this->btn2->Text = L"2";
 			this->btn2->UseVisualStyleBackColor = true;
+			this->btn2->Click += gcnew System::EventHandler(this, &MyForm::button_Click);
 			// 
 			// btn0
 			// 
@@ -206,6 +212,7 @@ namespace Calc {
 			this->btn0->TabIndex = 7;
 			this->btn0->Text = L"0";
 			this->btn0->UseVisualStyleBackColor = true;
+			this->btn0->Click += gcnew System::EventHandler(this, &MyForm::button_Click);
 			// 
 			// btnDecPnt
 			// 
@@ -228,6 +235,7 @@ namespace Calc {
 			this->btn9->TabIndex = 9;
 			this->btn9->Text = L"9";
 			this->btn9->UseVisualStyleBackColor = true;
+			this->btn9->Click += gcnew System::EventHandler(this, &MyForm::button_Click);
 			// 
 			// btn6
 			// 
@@ -239,6 +247,7 @@ namespace Calc {
 			this->btn6->TabIndex = 10;
 			this->btn6->Text = L"6";
 			this->btn6->UseVisualStyleBackColor = true;
+			this->btn6->Click += gcnew System::EventHandler(this, &MyForm::button_Click);
 			// 
 			// btn3
 			// 
@@ -250,6 +259,7 @@ namespace Calc {
 			this->btn3->TabIndex = 11;
 			this->btn3->Text = L"3";
 			this->btn3->UseVisualStyleBackColor = true;
+			this->btn3->Click += gcnew System::EventHandler(this, &MyForm::button_Click);
 			// 
 			// btneq
 			// 
@@ -403,6 +413,19 @@ namespace Calc {
 	}
 private: System::Void btnCE_Click(System::Object^  sender, System::EventArgs^  e) {
 	txtDisplay->Text = "0";
+}
+private: System::Void button_Click(System::Object^  sender, System::EventArgs^  e) {
+	// numbers buttons
+	Button ^ Numbers = safe_cast<Button^>(sender);
+
+	if (txtDisplay->Text == "0")
+	{
+		txtDisplay->Text = Numbers->Text;
+	}
+	else
+	{
+		txtDisplay->Text = txtDisplay->Text + Numbers->Text;
+	}
 }
 };
 }
