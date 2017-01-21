@@ -76,6 +76,8 @@ namespace Calc {
 	private: System::Windows::Forms::Button^  btnPlus;
 
 	private: System::Windows::Forms::Label^  lblShowOp;
+	private: System::Windows::Forms::Button^  btnCE;
+	private: System::Windows::Forms::Button^  btnC;
 
 	private:
 		/// <summary>
@@ -108,6 +110,8 @@ namespace Calc {
 			this->btnMinus = (gcnew System::Windows::Forms::Button());
 			this->btnPlus = (gcnew System::Windows::Forms::Button());
 			this->lblShowOp = (gcnew System::Windows::Forms::Label());
+			this->btnCE = (gcnew System::Windows::Forms::Button());
+			this->btnC = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// txtDisplay
@@ -305,11 +309,35 @@ namespace Calc {
 			this->lblShowOp->Size = System::Drawing::Size(0, 13);
 			this->lblShowOp->TabIndex = 17;
 			// 
+			// btnCE
+			// 
+			this->btnCE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->btnCE->Location = System::Drawing::Point(12, 295);
+			this->btnCE->Name = L"btnCE";
+			this->btnCE->Size = System::Drawing::Size(50, 50);
+			this->btnCE->TabIndex = 18;
+			this->btnCE->Text = L"CE";
+			this->btnCE->UseVisualStyleBackColor = true;
+			// 
+			// btnC
+			// 
+			this->btnC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->btnC->Location = System::Drawing::Point(69, 295);
+			this->btnC->Name = L"btnC";
+			this->btnC->Size = System::Drawing::Size(50, 50);
+			this->btnC->TabIndex = 19;
+			this->btnC->Text = L"C";
+			this->btnC->UseVisualStyleBackColor = true;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(253, 302);
+			this->ClientSize = System::Drawing::Size(253, 359);
+			this->Controls->Add(this->btnC);
+			this->Controls->Add(this->btnCE);
 			this->Controls->Add(this->lblShowOp);
 			this->Controls->Add(this->btnPlus);
 			this->Controls->Add(this->btnMinus);
