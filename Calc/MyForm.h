@@ -78,6 +78,8 @@ namespace Calc {
 	private: System::Windows::Forms::Label^  lblShowOp;
 	private: System::Windows::Forms::Button^  btnCE;
 	private: System::Windows::Forms::Button^  btnC;
+	private: System::Windows::Forms::Button^  btnPlusMinus;
+	private: System::Windows::Forms::Button^  btnBackspace;
 
 	private:
 		/// <summary>
@@ -112,6 +114,8 @@ namespace Calc {
 			this->lblShowOp = (gcnew System::Windows::Forms::Label());
 			this->btnCE = (gcnew System::Windows::Forms::Button());
 			this->btnC = (gcnew System::Windows::Forms::Button());
+			this->btnPlusMinus = (gcnew System::Windows::Forms::Button());
+			this->btnBackspace = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// txtDisplay
@@ -121,14 +125,14 @@ namespace Calc {
 			this->txtDisplay->Location = System::Drawing::Point(13, 13);
 			this->txtDisplay->Multiline = true;
 			this->txtDisplay->Name = L"txtDisplay";
-			this->txtDisplay->Size = System::Drawing::Size(228, 43);
+			this->txtDisplay->Size = System::Drawing::Size(218, 43);
 			this->txtDisplay->TabIndex = 0;
 			// 
 			// btn7
 			// 
 			this->btn7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->btn7->Location = System::Drawing::Point(13, 71);
+			this->btn7->Location = System::Drawing::Point(13, 129);
 			this->btn7->Name = L"btn7";
 			this->btn7->Size = System::Drawing::Size(50, 50);
 			this->btn7->TabIndex = 1;
@@ -139,7 +143,7 @@ namespace Calc {
 			// 
 			this->btn8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->btn8->Location = System::Drawing::Point(69, 71);
+			this->btn8->Location = System::Drawing::Point(69, 129);
 			this->btn8->Name = L"btn8";
 			this->btn8->Size = System::Drawing::Size(50, 50);
 			this->btn8->TabIndex = 2;
@@ -150,7 +154,7 @@ namespace Calc {
 			// 
 			this->btn4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->btn4->Location = System::Drawing::Point(12, 127);
+			this->btn4->Location = System::Drawing::Point(12, 185);
 			this->btn4->Name = L"btn4";
 			this->btn4->Size = System::Drawing::Size(50, 50);
 			this->btn4->TabIndex = 3;
@@ -161,7 +165,7 @@ namespace Calc {
 			// 
 			this->btn5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->btn5->Location = System::Drawing::Point(69, 127);
+			this->btn5->Location = System::Drawing::Point(69, 185);
 			this->btn5->Name = L"btn5";
 			this->btn5->Size = System::Drawing::Size(50, 50);
 			this->btn5->TabIndex = 4;
@@ -172,7 +176,7 @@ namespace Calc {
 			// 
 			this->btn1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->btn1->Location = System::Drawing::Point(13, 183);
+			this->btn1->Location = System::Drawing::Point(13, 241);
 			this->btn1->Name = L"btn1";
 			this->btn1->Size = System::Drawing::Size(50, 50);
 			this->btn1->TabIndex = 5;
@@ -183,7 +187,7 @@ namespace Calc {
 			// 
 			this->btn2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->btn2->Location = System::Drawing::Point(69, 183);
+			this->btn2->Location = System::Drawing::Point(69, 241);
 			this->btn2->Name = L"btn2";
 			this->btn2->Size = System::Drawing::Size(50, 50);
 			this->btn2->TabIndex = 6;
@@ -194,7 +198,7 @@ namespace Calc {
 			// 
 			this->btn0->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->btn0->Location = System::Drawing::Point(13, 239);
+			this->btn0->Location = System::Drawing::Point(13, 297);
 			this->btn0->Name = L"btn0";
 			this->btn0->Size = System::Drawing::Size(50, 50);
 			this->btn0->TabIndex = 7;
@@ -205,7 +209,7 @@ namespace Calc {
 			// 
 			this->btnDecPnt->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->btnDecPnt->Location = System::Drawing::Point(69, 239);
+			this->btnDecPnt->Location = System::Drawing::Point(69, 297);
 			this->btnDecPnt->Name = L"btnDecPnt";
 			this->btnDecPnt->Size = System::Drawing::Size(50, 50);
 			this->btnDecPnt->TabIndex = 8;
@@ -216,7 +220,7 @@ namespace Calc {
 			// 
 			this->btn9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->btn9->Location = System::Drawing::Point(135, 71);
+			this->btn9->Location = System::Drawing::Point(125, 129);
 			this->btn9->Name = L"btn9";
 			this->btn9->Size = System::Drawing::Size(50, 50);
 			this->btn9->TabIndex = 9;
@@ -227,7 +231,7 @@ namespace Calc {
 			// 
 			this->btn6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->btn6->Location = System::Drawing::Point(135, 127);
+			this->btn6->Location = System::Drawing::Point(125, 185);
 			this->btn6->Name = L"btn6";
 			this->btn6->Size = System::Drawing::Size(50, 50);
 			this->btn6->TabIndex = 10;
@@ -238,7 +242,7 @@ namespace Calc {
 			// 
 			this->btn3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->btn3->Location = System::Drawing::Point(135, 183);
+			this->btn3->Location = System::Drawing::Point(125, 241);
 			this->btn3->Name = L"btn3";
 			this->btn3->Size = System::Drawing::Size(50, 50);
 			this->btn3->TabIndex = 11;
@@ -249,7 +253,7 @@ namespace Calc {
 			// 
 			this->btneq->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->btneq->Location = System::Drawing::Point(135, 239);
+			this->btneq->Location = System::Drawing::Point(125, 297);
 			this->btneq->Name = L"btneq";
 			this->btneq->Size = System::Drawing::Size(50, 50);
 			this->btneq->TabIndex = 12;
@@ -260,7 +264,7 @@ namespace Calc {
 			// 
 			this->btnDiv->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->btnDiv->Location = System::Drawing::Point(191, 239);
+			this->btnDiv->Location = System::Drawing::Point(181, 297);
 			this->btnDiv->Name = L"btnDiv";
 			this->btnDiv->Size = System::Drawing::Size(50, 50);
 			this->btnDiv->TabIndex = 13;
@@ -271,7 +275,7 @@ namespace Calc {
 			// 
 			this->btnMult->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->btnMult->Location = System::Drawing::Point(191, 183);
+			this->btnMult->Location = System::Drawing::Point(181, 241);
 			this->btnMult->Name = L"btnMult";
 			this->btnMult->Size = System::Drawing::Size(50, 50);
 			this->btnMult->TabIndex = 14;
@@ -282,7 +286,7 @@ namespace Calc {
 			// 
 			this->btnMinus->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->btnMinus->Location = System::Drawing::Point(191, 127);
+			this->btnMinus->Location = System::Drawing::Point(181, 185);
 			this->btnMinus->Name = L"btnMinus";
 			this->btnMinus->Size = System::Drawing::Size(50, 50);
 			this->btnMinus->TabIndex = 15;
@@ -293,7 +297,7 @@ namespace Calc {
 			// 
 			this->btnPlus->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->btnPlus->Location = System::Drawing::Point(191, 71);
+			this->btnPlus->Location = System::Drawing::Point(181, 129);
 			this->btnPlus->Name = L"btnPlus";
 			this->btnPlus->Size = System::Drawing::Size(50, 50);
 			this->btnPlus->TabIndex = 16;
@@ -313,7 +317,7 @@ namespace Calc {
 			// 
 			this->btnCE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->btnCE->Location = System::Drawing::Point(12, 295);
+			this->btnCE->Location = System::Drawing::Point(70, 73);
 			this->btnCE->Name = L"btnCE";
 			this->btnCE->Size = System::Drawing::Size(50, 50);
 			this->btnCE->TabIndex = 18;
@@ -324,18 +328,42 @@ namespace Calc {
 			// 
 			this->btnC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->btnC->Location = System::Drawing::Point(69, 295);
+			this->btnC->Location = System::Drawing::Point(126, 73);
 			this->btnC->Name = L"btnC";
 			this->btnC->Size = System::Drawing::Size(50, 50);
 			this->btnC->TabIndex = 19;
 			this->btnC->Text = L"C";
 			this->btnC->UseVisualStyleBackColor = true;
 			// 
+			// btnPlusMinus
+			// 
+			this->btnPlusMinus->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->btnPlusMinus->Location = System::Drawing::Point(181, 73);
+			this->btnPlusMinus->Name = L"btnPlusMinus";
+			this->btnPlusMinus->Size = System::Drawing::Size(50, 50);
+			this->btnPlusMinus->TabIndex = 21;
+			this->btnPlusMinus->Text = L"+/-";
+			this->btnPlusMinus->UseVisualStyleBackColor = true;
+			// 
+			// btnBackspace
+			// 
+			this->btnBackspace->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->btnBackspace->Location = System::Drawing::Point(13, 73);
+			this->btnBackspace->Name = L"btnBackspace";
+			this->btnBackspace->Size = System::Drawing::Size(50, 50);
+			this->btnBackspace->TabIndex = 20;
+			this->btnBackspace->Text = L"CE";
+			this->btnBackspace->UseVisualStyleBackColor = true;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(253, 359);
+			this->ClientSize = System::Drawing::Size(243, 359);
+			this->Controls->Add(this->btnPlusMinus);
+			this->Controls->Add(this->btnBackspace);
 			this->Controls->Add(this->btnC);
 			this->Controls->Add(this->btnCE);
 			this->Controls->Add(this->lblShowOp);
@@ -357,7 +385,7 @@ namespace Calc {
 			this->Controls->Add(this->btn7);
 			this->Controls->Add(this->txtDisplay);
 			this->Name = L"MyForm";
-			this->Text = L"MyForm";
+			this->Text = L"Calc";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
