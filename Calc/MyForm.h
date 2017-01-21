@@ -282,6 +282,7 @@ namespace Calc {
 			this->btnDiv->TabIndex = 13;
 			this->btnDiv->Text = L"/";
 			this->btnDiv->UseVisualStyleBackColor = true;
+			this->btnDiv->Click += gcnew System::EventHandler(this, &MyForm::Arithmetic);
 			// 
 			// btnMult
 			// 
@@ -293,6 +294,7 @@ namespace Calc {
 			this->btnMult->TabIndex = 14;
 			this->btnMult->Text = L"*";
 			this->btnMult->UseVisualStyleBackColor = true;
+			this->btnMult->Click += gcnew System::EventHandler(this, &MyForm::Arithmetic);
 			// 
 			// btnMinus
 			// 
@@ -304,6 +306,7 @@ namespace Calc {
 			this->btnMinus->TabIndex = 15;
 			this->btnMinus->Text = L"-";
 			this->btnMinus->UseVisualStyleBackColor = true;
+			this->btnMinus->Click += gcnew System::EventHandler(this, &MyForm::Arithmetic);
 			// 
 			// btnPlus
 			// 
@@ -315,6 +318,7 @@ namespace Calc {
 			this->btnPlus->TabIndex = 16;
 			this->btnPlus->Text = L"+";
 			this->btnPlus->UseVisualStyleBackColor = true;
+			this->btnPlus->Click += gcnew System::EventHandler(this, &MyForm::Arithmetic);
 			// 
 			// lblShowOp
 			// 
@@ -406,6 +410,12 @@ namespace Calc {
 
 		}
 #pragma endregion
+
+		double iFirstnum;
+		double iSecondnum;
+		double iResult;
+		String^ iOperator;
+
 	private: System::Void btnC_Click(System::Object^  sender, System::EventArgs^  e) {
 
 		txtDisplay->Text = "0";
@@ -426,6 +436,15 @@ private: System::Void button_Click(System::Object^  sender, System::EventArgs^  
 	{
 		txtDisplay->Text = txtDisplay->Text + Numbers->Text;
 	}
+}
+private: System::Void Arithmetic(System::Object^  sender, System::EventArgs^  e) {
+	// +, -, *, / buttons
+	Button ^ op = safe_cast<Button^>(sender);
+	iFirstnum = Double::Parse(txtDisplay->Text);
+	txtDisplay->Text = "";
+	iOperator = op->Text;
+	lblShowOp -> Text = System::Convert::ToString(iFirstnum) + " " + iOperator;
+		
 }
 };
 }
