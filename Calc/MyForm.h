@@ -271,6 +271,7 @@ namespace Calc {
 			this->btneq->TabIndex = 12;
 			this->btneq->Text = L"=";
 			this->btneq->UseVisualStyleBackColor = true;
+			this->btneq->Click += gcnew System::EventHandler(this, &MyForm::btneq_Click);
 			// 
 			// btnDiv
 			// 
@@ -443,8 +444,33 @@ private: System::Void Arithmetic(System::Object^  sender, System::EventArgs^  e)
 	iFirstnum = Double::Parse(txtDisplay->Text);
 	txtDisplay->Text = "";
 	iOperator = op->Text;
-	lblShowOp -> Text = System::Convert::ToString(iFirstnum) + " " + iOperator;
+	lblShowOp->Text = System::Convert::ToString(iFirstnum) + " " + iOperator;
 		
+}
+private: System::Void btneq_Click(System::Object^  sender, System::EventArgs^  e) {
+	lblShowOp->Text = "";
+	iSecondnum = Double::Parse(txtDisplay->Text);
+
+	if (iOperator == "+")
+	{
+		iResult = iFirstnum + iSecondnum;
+		txtDisplay->Text = System::Convert::ToString(iResult);
+	}
+	else if (iOperator == "-")
+	{
+		iResult = iFirstnum - iSecondnum;
+		txtDisplay->Text = System::Convert::ToString(iResult);
+	}
+	else if (iOperator == "*")
+	{
+		iResult = iFirstnum * iSecondnum;
+		txtDisplay->Text = System::Convert::ToString(iResult);
+	}
+	else if (iOperator == "/")
+	{
+		iResult = iFirstnum / iSecondnum;
+		txtDisplay->Text = System::Convert::ToString(iResult);
+	}
 }
 };
 }
