@@ -336,6 +336,7 @@ namespace Calc {
 			this->btnC->TabIndex = 19;
 			this->btnC->Text = L"C";
 			this->btnC->UseVisualStyleBackColor = true;
+			this->btnC->Click += gcnew System::EventHandler(this, &MyForm::btnC_Click);
 			// 
 			// btnPlusMinus
 			// 
@@ -394,5 +395,10 @@ namespace Calc {
 
 		}
 #pragma endregion
-	};
+	private: System::Void btnC_Click(System::Object^  sender, System::EventArgs^  e) {
+
+		txtDisplay->Text = "0";
+		lblShowOp->Text = "";
+	}
+};
 }
