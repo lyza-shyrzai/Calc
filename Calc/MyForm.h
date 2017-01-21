@@ -325,6 +325,7 @@ namespace Calc {
 			this->btnCE->TabIndex = 18;
 			this->btnCE->Text = L"CE";
 			this->btnCE->UseVisualStyleBackColor = true;
+			this->btnCE->Click += gcnew System::EventHandler(this, &MyForm::btnCE_Click);
 			// 
 			// btnC
 			// 
@@ -400,5 +401,8 @@ namespace Calc {
 		txtDisplay->Text = "0";
 		lblShowOp->Text = "";
 	}
+private: System::Void btnCE_Click(System::Object^  sender, System::EventArgs^  e) {
+	txtDisplay->Text = "0";
+}
 };
 }
