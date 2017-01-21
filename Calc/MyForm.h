@@ -120,13 +120,15 @@ namespace Calc {
 			// 
 			// txtDisplay
 			// 
-			this->txtDisplay->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->txtDisplay->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->txtDisplay->Location = System::Drawing::Point(13, 13);
 			this->txtDisplay->Multiline = true;
 			this->txtDisplay->Name = L"txtDisplay";
 			this->txtDisplay->Size = System::Drawing::Size(218, 43);
 			this->txtDisplay->TabIndex = 0;
+			this->txtDisplay->Text = L"0";
+			this->txtDisplay->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
 			// 
 			// btn7
 			// 
@@ -348,13 +350,13 @@ namespace Calc {
 			// 
 			// btnBackspace
 			// 
-			this->btnBackspace->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
+			this->btnBackspace->Font = (gcnew System::Drawing::Font(L"Wingdings 3", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(2)));
 			this->btnBackspace->Location = System::Drawing::Point(13, 73);
 			this->btnBackspace->Name = L"btnBackspace";
 			this->btnBackspace->Size = System::Drawing::Size(50, 50);
 			this->btnBackspace->TabIndex = 20;
-			this->btnBackspace->Text = L"CE";
+			this->btnBackspace->Text = L"f";
 			this->btnBackspace->UseVisualStyleBackColor = true;
 			// 
 			// MyForm
@@ -384,6 +386,7 @@ namespace Calc {
 			this->Controls->Add(this->btn8);
 			this->Controls->Add(this->btn7);
 			this->Controls->Add(this->txtDisplay);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 			this->Name = L"MyForm";
 			this->Text = L"Calc";
 			this->ResumeLayout(false);
