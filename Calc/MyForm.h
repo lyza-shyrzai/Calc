@@ -80,6 +80,7 @@ namespace Calc {
 	private: System::Windows::Forms::Button^  btnC;
 	private: System::Windows::Forms::Button^  btnPlusMinus;
 	private: System::Windows::Forms::Button^  btnBackspace;
+	private: System::Windows::Forms::Button^  Github;
 
 	private:
 		/// <summary>
@@ -116,6 +117,7 @@ namespace Calc {
 			this->btnC = (gcnew System::Windows::Forms::Button());
 			this->btnPlusMinus = (gcnew System::Windows::Forms::Button());
 			this->btnBackspace = (gcnew System::Windows::Forms::Button());
+			this->Github = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// txtDisplay
@@ -380,11 +382,22 @@ namespace Calc {
 			this->btnBackspace->UseVisualStyleBackColor = true;
 			this->btnBackspace->Click += gcnew System::EventHandler(this, &MyForm::btnBackspace_Click);
 			// 
+			// Github
+			// 
+			this->Github->Location = System::Drawing::Point(13, 353);
+			this->Github->Name = L"Github";
+			this->Github->Size = System::Drawing::Size(218, 50);
+			this->Github->TabIndex = 22;
+			this->Github->Text = L"Github";
+			this->Github->UseVisualStyleBackColor = true;
+			this->Github->Click += gcnew System::EventHandler(this, &MyForm::Github_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(243, 359);
+			this->ClientSize = System::Drawing::Size(243, 417);
+			this->Controls->Add(this->Github);
 			this->Controls->Add(this->btnPlusMinus);
 			this->Controls->Add(this->btnBackspace);
 			this->Controls->Add(this->btnC);
@@ -506,6 +519,9 @@ private: System::Void btnPlusMinus_Click(System::Object^  sender, System::EventA
 	{
 		txtDisplay->Text = "-" + txtDisplay->Text;
 	}
+}
+private: System::Void Github_Click(System::Object^  sender, System::EventArgs^  e) {
+	System::Diagnostics::Process::Start("https://github.com/Liza-S/Calc");
 }
 };
 }
