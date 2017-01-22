@@ -225,6 +225,7 @@ namespace Calc {
 			this->btnDecPnt->TabIndex = 8;
 			this->btnDecPnt->Text = L".";
 			this->btnDecPnt->UseVisualStyleBackColor = true;
+			this->btnDecPnt->Click += gcnew System::EventHandler(this, &MyForm::btnDecPnt_Click);
 			// 
 			// btn9
 			// 
@@ -485,6 +486,12 @@ private: System::Void txtDisplay_TextChanged(System::Object^  sender, System::Ev
 	if (txtDisplay->Text == "")
 	{
 		txtDisplay->Text = "0";
+	}
+}
+private: System::Void btnDecPnt_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (!txtDisplay->Text->Contains("."))
+	{
+		txtDisplay->Text = txtDisplay->Text + ".";
 	}
 }
 };
