@@ -129,6 +129,7 @@ namespace Calc {
 			this->txtDisplay->TabIndex = 0;
 			this->txtDisplay->Text = L"0";
 			this->txtDisplay->TextAlign = System::Windows::Forms::HorizontalAlignment::Right;
+			this->txtDisplay->TextChanged += gcnew System::EventHandler(this, &MyForm::txtDisplay_TextChanged);
 			// 
 			// btn7
 			// 
@@ -375,6 +376,7 @@ namespace Calc {
 			this->btnBackspace->TabIndex = 20;
 			this->btnBackspace->Text = L"f";
 			this->btnBackspace->UseVisualStyleBackColor = true;
+			this->btnBackspace->Click += gcnew System::EventHandler(this, &MyForm::btnBackspace_Click);
 			// 
 			// MyForm
 			// 
@@ -471,6 +473,15 @@ private: System::Void btneq_Click(System::Object^  sender, System::EventArgs^  e
 		iResult = iFirstnum / iSecondnum;
 		txtDisplay->Text = System::Convert::ToString(iResult);
 	}
+}
+private: System::Void btnBackspace_Click(System::Object^  sender, System::EventArgs^  e) {
+	// Backspace button
+	if (txtDisplay->Text->Length > 0)
+	{
+		txtDisplay->Text = txtDisplay->Text->Remove(txtDisplay->Text->Length - 1, 1);
+	}
+}
+private: System::Void txtDisplay_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 }
 };
 }
