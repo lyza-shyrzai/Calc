@@ -482,6 +482,10 @@ private: System::Void btnBackspace_Click(System::Object^  sender, System::EventA
 	}
 }
 private: System::Void txtDisplay_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+	if (txtDisplay->Text == "")
+	{
+		txtDisplay->Text = "0";
+	}
 }
 };
 }
