@@ -366,6 +366,7 @@ namespace Calc {
 			this->btnPlusMinus->TabIndex = 21;
 			this->btnPlusMinus->Text = L"+/-";
 			this->btnPlusMinus->UseVisualStyleBackColor = true;
+			this->btnPlusMinus->Click += gcnew System::EventHandler(this, &MyForm::btnPlusMinus_Click);
 			// 
 			// btnBackspace
 			// 
@@ -489,9 +490,21 @@ private: System::Void txtDisplay_TextChanged(System::Object^  sender, System::Ev
 	}
 }
 private: System::Void btnDecPnt_Click(System::Object^  sender, System::EventArgs^  e) {
+	// Decimal Point
 	if (!txtDisplay->Text->Contains("."))
 	{
 		txtDisplay->Text = txtDisplay->Text + ".";
+	}
+}
+private: System::Void btnPlusMinus_Click(System::Object^  sender, System::EventArgs^  e) {
+	// Plus Minus
+	if (txtDisplay->Text->Contains("-"))
+	{
+		txtDisplay->Text = txtDisplay->Text->Remove(0, 1);
+	}
+	else
+	{
+		txtDisplay->Text = "-" + txtDisplay->Text;
 	}
 }
 };
